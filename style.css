@@ -1,0 +1,121 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+.background {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: url('bg.png') no-repeat center center/cover;
+    z-index: 0;
+    filter: brightness(0.7) blur(1px);
+}
+.center-container {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-pic {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    box-shadow: 0 0 40px #222;
+    object-fit: cover;
+    transition: box-shadow 0.3s;
+    z-index: 2;
+}
+.profile-container:hover .profile-pic {
+    box-shadow: 0 0 50px #00eaff;
+}
+.menu-items {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.menu-btn {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: auto;
+    background: #222e;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 2px 8px #0008;
+}
+.profile-container:hover .menu-btn {
+    opacity: 1;
+}
+.menu-btn:nth-child(1) { transform: translate(-50%, -50%) rotate(0deg) translate(0, -180px) rotate(0deg);}
+.menu-btn:nth-child(2) { transform: translate(-50%, -50%) rotate(72deg) translate(0, -180px) rotate(-72deg);}
+.menu-btn:nth-child(3) { transform: translate(-50%, -50%) rotate(144deg) translate(0, -180px) rotate(-144deg);}
+.menu-btn:nth-child(4) { transform: translate(-50%, -50%) rotate(216deg) translate(0, -180px) rotate(-216deg);}
+.menu-btn:nth-child(5) { transform: translate(-50%, -50%) rotate(288deg) translate(0, -180px) rotate(-288deg);}
+.info-panel {
+    margin-top: 40px;
+    min-height: 120px;
+    min-width: 320px;
+    background: #fff9;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #0004;
+    padding: 24px 32px;
+    color: #222;
+    font-size: 1.1rem;
+    display: none;
+    z-index: 3;
+}
+@media (max-width: 600px) {
+    .profile-pic { width: 120px; height: 120px; }
+    .profile-container { width: 140px; height: 140px; }
+    .info-panel { min-width: 180px; padding: 12px 8px; font-size: 1rem; }
+    .menu-btn { font-size: 0.9rem; padding: 7px 10px; }
+}
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+section {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #2c3e50;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
